@@ -7,7 +7,7 @@ const fetchAllUsers = (req,res,next)=>{
         userModel.find({}).then((data)=>(
             res.status(200).json({
                 status:200,
-                data:{data}
+                data:data
             })    
         )).catch(next)
     }
@@ -28,7 +28,7 @@ const getUser = (req,res,next)=>{
         }
         return res.status(200).json({
             status:200,
-            data:{data}
+            data:data
         })
     }).catch(next)
 }
