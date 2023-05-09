@@ -3,14 +3,12 @@ const uuid = require("uuid")
 const {getOrSetCachedInfo,changeCachedInfo} = require('../redis-config')
 
 const fetchAllUsers = (req,res,next)=>{
-    if(req){
         userModel.find({}).then((data)=>(
-            res.status(200).json({
+            res.status(200).send({
                 status:200,
                 data:data
             })    
         )).catch(next)
-    }
 }
 
 const getUser = (req,res,next)=>{
@@ -26,7 +24,7 @@ const getUser = (req,res,next)=>{
             res.status(400)
             throw new Error("User with given id doen't exist")
         }
-        return res.status(200).json({
+        return res.status(200).send({
             status:200,
             data:data
         })
@@ -48,7 +46,7 @@ const createUser = (req,res,next)=>{
         age:age
     })).then((data)=>{
         res.status(201)
-        return res.json({
+        return res.send({
             status:201,
             message:"user updated successfully",
             data:data
@@ -69,7 +67,7 @@ const updateUser = (req,res,next)=>{
         }
     changeCachedInfo(userId,()=>userModel.findByIdAndUpdate(userId,{username:username,hobbies:hobbies,age:age},{new: true})).then((data)=>{
         res.status(200)
-        return res.json({
+        return res.send({
             status:200,
             message:"user updated successfully",
             data:data
@@ -86,7 +84,7 @@ const deleteUser = (req,res,next)=>{
     }
     changeCachedInfo(id,()=>userModel.findByIdAndDelete(id)).then((data)=>{
         res.status(200)
-        return res.json({
+        return res.send({
             status:200,
             message:"user deleted successfully",
             data:data

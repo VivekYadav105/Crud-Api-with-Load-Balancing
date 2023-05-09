@@ -10,7 +10,7 @@ userRouter.put("/:userId",updateUser);
 userRouter.delete("/:userId",deleteUser);
 
 userRouter.get("*",(req,res,next)=>{
-    return res.status(404).json({
+    res.status(404).send({
         message:"route doesn't exist",
         data:{},
         status:404

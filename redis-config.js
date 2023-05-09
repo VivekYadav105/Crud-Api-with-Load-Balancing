@@ -1,13 +1,7 @@
 const {createClient} = require('redis')
 require('dotenv').config()
-console.log(process.env.REDIS_URI)
 
 const client = createClient({url:process.env.REDIS_URI});
-async function start(){
-    await client.connect();
-}
-
-start();
 
 client.on("error", function(error) {
    console.error(error);
