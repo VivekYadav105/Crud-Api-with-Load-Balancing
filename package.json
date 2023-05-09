@@ -8,7 +8,8 @@
     "build:dev": "webpack --config webpack.dev.js --mode development && node ./dev-build/main.js",
     "build:prod": "webpack --config webpack.prod.js --mode production && node ./prod-build/main.js",
     "start:prod": "node ./prod-build/main.js",
-    "start:dev": "node ./dev-build/main.js"
+    "start:dev": "node ./dev-build/main.js",
+    "start:multi": "cross-env RUN_MODE=cluster webpack --config webpack.dev.js --mode development && node ./dev-cluster-build/main.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
   "dependencies": {
     "connect-redis": "^7.0.1",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "http-proxy": "^1.18.1",
