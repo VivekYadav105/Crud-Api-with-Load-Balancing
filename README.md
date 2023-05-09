@@ -33,12 +33,13 @@ Create a `.env` file in the root directory of the project with the following var
 
 ## Scripts
 
-- `start`: starts the server with nodemon
-- `build:dev`: builds the development version of the app using webpack and starts it
-- `build:prod`: builds the production version of the app using webpack and starts it
-- `start:prod`: starts the production version of the app
-- `start:dev`: starts the development version of the app
-- `start:multi`: starts the development version of the app in cluster mode
+After completing the setup to run or build the app use any othe following commands
+- `npm start`: starts the server with nodemon
+- `npm run build:dev`: builds the development version of the app using webpack and starts it
+- `npm run build:prod`: builds the production version of the app using webpack and starts it
+- `npm run start:prod`: starts the production version of the app
+- `npm run start:dev`: starts the development version of the app
+- `npm run start:multi`: starts the development version of the app in cluster mode
 
 ## Documentation
 
