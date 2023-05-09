@@ -1,9 +1,10 @@
 # Crud-Api-with-Load-Balancing
-An Api with simple crud Application with the implementation of node clustering and load balancing done with Redis for caching and mongodb as database.The development and production builds are bundled with webpack
+An Api with simple crud Application with the implementation of node clustering and load balancing done with Redis for caching and mongodb as database.The development and production builds are bundled with webpack.<br/>
+The api also uses Horizontal Load balancing by launching multiple instance of the app.The number of instances equal to the number of cores in CPU. 
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/[user]/[repo].git`
+1. Clone the repository: `git clone https://github.com/VivekYadav105/Crud-Api-with-Load-Balancing/.git`
 2. Install dependencies: `npm install`
 
 ## Configuration
@@ -39,8 +40,8 @@ After completing the setup to run or build the app use any othe following comman
 - `npm run build:prod`: builds the production version of the app using webpack and starts it
 - `npm run start:prod`: starts the production version of the app
 - `npm run start:dev`: starts the development version of the app
-- `npm run start:multi`: starts the development version of the app in cluster mode
+- `npm run start:multi`: starts the development version of the app in cluster mode. 
 
 ## Documentation
 
-For more information on how to use the project, see the [documentation](https://example.com/documentation).
+For more information on how to use the project, see the [documentation](https://documenter.getpostman.com/view/21531950/2s93eZyBVN).
